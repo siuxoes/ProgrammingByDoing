@@ -9,7 +9,7 @@ public class Exer37GenderGame {
     private String fName;
     private String lName;
     private int age;
-    private boolean married;
+    private String married;
     private Scanner in;
 
     public Exer37GenderGame(){
@@ -28,8 +28,12 @@ public class Exer37GenderGame {
                 System.out.println(n + fName + " " +lName);
             }else{
                 System.out.println("Are you married?(Yes o no)");
-                married = return (in.nextLine()).equals("Yes");
-
+                married = in.nextLine();
+                if(married.equalsIgnoreCase("yes")){
+                    System.out.println(n + " Mrs. "+lName);
+                }else{
+                    System.out.println(n + " Ms. "+lName);
+                }
             }
         }else{
             if(age < 20){
@@ -38,5 +42,9 @@ public class Exer37GenderGame {
                 System.out.println(n + " Mr. "+lName);
             }
         }
+    }
+
+    public static void main(String[] args){
+        Exer37GenderGame exer37GenderGame = new Exer37GenderGame();
     }
 }
